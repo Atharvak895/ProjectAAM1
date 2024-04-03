@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code Generator</title>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@latest"></script>
+</head>
+<body>
+
+<div id="qrcode"></div>
+
+<script>
+// Function to generate QR code for a given link with table number
+function generateQRCode(link, tableNumber) {
+    var qrText = link + "?table=" + tableNumber;
+    var qr = new QRCode(document.getElementById("qrcode"), {
+        width : 200,
+        height : 200
+    });
+    qr.makeCode(qrText);
+}
+
+// Call generateQRCode function with your link and table number
+var link = "https://rautavinash2811.github.io/project1/";
+var tableNumber = "TBL01";
+generateQRCode(link, tableNumber);
+</script>
+
+</body>
+</html>
